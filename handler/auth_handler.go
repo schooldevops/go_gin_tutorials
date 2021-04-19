@@ -12,8 +12,8 @@ import (
 	"github.com/spf13/viper"
 )
 
-var ACCESS_SECRET = viper.GetString(`token.access_secret`)
-var REFRESH_SECRET = viper.GetString(`token.refresh_secret`)
+var ACCESS_SECRET string
+var REFRESH_SECRET string
 
 type Token struct {
 	AccessToken    string
@@ -24,6 +24,9 @@ type Token struct {
 
 func AuthRoutes(r *gin.Engine) {
 	auth := r.Group("/auth")
+
+	ACCESS_SECRET = viper.GetString("token.access_secret")
+	REFRESH_SECRET = viper.GetString("token.refresh_secret")
 
 	auth.POST("/login", login)
 	auth.POST("/logout", logout)
@@ -66,8 +69,6 @@ func refresh(c *gin.Context) {
 	}
 
 	refreshToken := mapToken["refresh_token"]
-	fmt.Println("refreshToken1: ", mapToken)
-	fmt.Println("refreshToken2: ", refreshToken)
 	token, err := jwt.Parse(refreshToken, func(token *jwt.Token) (interface{}, error) {
 		//Make sure that the token method conform to "SigningMethodHMAC"
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {

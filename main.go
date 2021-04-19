@@ -6,16 +6,15 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/schooldevops/gin_tutorial/handler"
-	"github.com/schooldevops/gin_tutorial/utils"
 )
 
 func main() {
 
-	utils.LoadConfig()
+	LoadConfig()
 
 	r := gin.Default()
 
-	utils.InitLog(r)
+	InitLog(r)
 
 	r.Use(gin.Recovery())
 

@@ -1,4 +1,4 @@
-package utils
+package main
 
 import (
 	"fmt"
@@ -10,7 +10,11 @@ import (
 )
 
 func LoadConfig() {
-	viper.SetConfigFile("./config.yml")
+	viper.SetConfigName("config")
+	viper.AddConfigPath(".")
+	viper.AutomaticEnv()
+	viper.SetConfigType("yml")
+
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(err)

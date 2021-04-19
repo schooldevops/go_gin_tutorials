@@ -11,6 +11,7 @@ Content-Type: application/json
 ### Refresh Token
 POST http://localhost:8080/auth/refresh
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTk0MzUxNDEsInVzZXJfaWQiOiJraWRvIn0.EsPe0dcSASFrdTWxnE27wdbwu-NsQaJQ6fZHPzEzNRo
 
-{}
+{
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTk0MzY1NjEsInVzZXJfaWQiOiJraWRvIn0.8OGNCarRqdte1FAtU1sM5RhDBy4Ri6OBdRJkF2XNrlQ"
+}
