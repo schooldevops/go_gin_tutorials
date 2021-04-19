@@ -1,0 +1,16 @@
+### Get Token
+POST http://localhost:8080/auth/login 
+Content-Type: application/json
+
+{
+  "id": "kido",
+  "username": "admin",
+  "password": "passwd" 
+}
+
+### Refresh Token
+POST http://localhost:8080/auth/refresh
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTk0MzUxNDEsInVzZXJfaWQiOiJraWRvIn0.EsPe0dcSASFrdTWxnE27wdbwu-NsQaJQ6fZHPzEzNRo
+
+{}

@@ -1,0 +1,15 @@
+### Get 
+GET http://localhost:8080/ping
+
+### Get ASCII JSON
+GET http://localhost:8080/someJSON
+
+### Struct binding B
+GET http://localhost:8080/getb?field_a=hello&field_b=world
+
+### Struct binding C
+GET http://localhost:8080/getc?field_a=hello&field_c=world
+
+### Struct binding D
+GET http://localhost:8080/getd?field_x=hello&field_d=world
+
